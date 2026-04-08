@@ -6,8 +6,12 @@ print("connexion reussie")
 conn.close()
     
 
-v = Voiture("Toyota", "Corolla", 2020, 20000)
-ajouter_voiture(v)
+# v = Voiture("Toyota", "Corolla", 2020, 20000)
+# ajouter_voiture(v)
 
 
 
+voitures = recuperer_voitures()
+
+for v in voitures:
+    v.afficher_voiture()
