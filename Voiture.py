@@ -10,4 +10,3 @@ class Voiture:
     def afficher_voiture(self):
         print(f"ID:{self.id},marque :{self.marque},annee: {self.annee}, prix: {self.prix}")    
 
-
