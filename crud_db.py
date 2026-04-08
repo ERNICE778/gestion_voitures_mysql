@@ -1,5 +1,6 @@
 import mysql.connector
 import json
+from Voiture import Voiture
 
 def connecter_db():
     with open("config.json") as  f:
@@ -45,4 +46,22 @@ def ajouter_voiture(voiture):
 
     conn.commit()
     conn.close()    
+
+
+
+
+
+def recuperer_voitures():
+    conn = connecter_db()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM voiture")
+    rows = cursor.fetchall()
+
+    voitures = []
+    for r in rows:
+        voitures.append(Voiture(r[1], r[2], r[3], r[4], r[0]))
+
+    conn.close()
+    return voitures    
 
