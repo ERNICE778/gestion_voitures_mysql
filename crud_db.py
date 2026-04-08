@@ -31,3 +31,18 @@ def creer_table():
     conn.commit()
     conn.close()
 
+
+def ajouter_voiture(voiture):
+    conn = connecter_db()
+    cursor = conn.cursor()
+
+    creer_table()
+
+    cursor.execute(
+        "INSERT INTO voiture (marque, modele, annee, prix) VALUES (%s, %s, %s, %s)",
+        (voiture.marque, voiture.modele, voiture.annee, voiture.prix)
+    )
+
+    conn.commit()
+    conn.close()    
+
