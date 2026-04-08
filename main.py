@@ -9,6 +9,7 @@ conn.close()
 # v = Voiture("Toyota", "Corolla", 2020, 20000)
 # ajouter_voiture(v)
 
+supprimer_voiture(1)
 
 
 voitures = recuperer_voitures()

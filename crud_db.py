@@ -65,3 +65,14 @@ def recuperer_voitures():
     conn.close()
     return voitures    
 
+
+
+def supprimer_voiture(id):
+    conn = connecter_db()
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM voiture WHERE id = %s", (id,))
+
+    conn.commit()
+    conn.close()
+
