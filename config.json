@@ -1,6 +1,6 @@
 {
     "host": "localhost",
-    "user": "user_python",
-    "password": "Python2026",
+    "user": "root",
+    "password": "1234",
     "database": "db_voitures"
 }

@@ -1,5 +1,5 @@
-Class Voiture:
-    def __init__(self,id=None,marque,modele,annee,prix):
+class Voiture:
+    def __init__(self,marque,modele,annee,prix,id=None):
         self.id=id
         self.marque=marque
         self.modele=modele
