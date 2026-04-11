@@ -2,13 +2,13 @@
 
 
 # **Mes informations** 
-# Prenom:**Ernice**
-# Nom: **Kenna Kenfack**
-# Cours : **INF1093 -Programmation 2**
+## Prenom:**Ernice**
+## Nom: **Kenna Kenfack**
+## Cours : **INF1093 -Programmation 2**
 
 
-# 📒**Description de l'atelier** 
- ## Cet atelier permet d'appliquer plusieurs concepts  en POO qui sont la persistance des donnees ainsi nous avons pu interagir avec la ##base de donnees via le connecteur mysql-connector.
+## 📒**Description de l'atelier** 
+ ### Cet atelier permet d'appliquer plusieurs concepts  en POO qui sont la persistance des donnees ainsi nous avons pu interagir avec la base de donnees via le connecteur mysql-connector.
 
  ## J'ai implementé plusieurs méthodes :
  ### -➕Ajout d'une voiture
