@@ -5,7 +5,7 @@ from Voiture import Voiture
 def connecter_db():
     with open("config.json") as  f:
         config = json.load(f)
-    
+
     connexion = mysql.connector.connect(
         host=config["host"],
         user=config["user"],
@@ -18,7 +18,6 @@ def connecter_db():
 def creer_table():
     conn = connecter_db()
     cursor = conn.cursor()
-
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS voiture (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -28,7 +27,6 @@ def creer_table():
         prix DECIMAL(10,2)
     )
     """)
-
     conn.commit()
     conn.close()
 
@@ -38,12 +36,10 @@ def ajouter_voiture(voiture):
     cursor = conn.cursor()
 
     creer_table()
-
     cursor.execute(
         "INSERT INTO voiture (marque, modele, annee, prix) VALUES (%s, %s, %s, %s)",
         (voiture.marque, voiture.modele, voiture.annee, voiture.prix)
     )
-
     conn.commit()
     conn.close()    
 
@@ -52,16 +48,14 @@ def ajouter_voiture(voiture):
 
 
 def recuperer_voitures():
-    conn = connecter_db()
-    cursor = conn.cursor()
-
+    conn=connecter_db()
+    cursor =conn.cursor()
     cursor.execute("SELECT * FROM voiture")
-    rows = cursor.fetchall()
+    lignes= cursor.fetchall()
 
     voitures = []
-    for r in rows:
+    for r in lignes:
         voitures.append(Voiture(r[1], r[2], r[3], r[4], r[0]))
-
     conn.close()
     return voitures    
 
@@ -70,23 +64,19 @@ def recuperer_voitures():
 def supprimer_voiture(id):
     conn = connecter_db()
     cursor = conn.cursor()
-
     cursor.execute("DELETE FROM voiture WHERE id = %s", (id,))
-
     conn.commit()
     conn.close()
 
 
 def modifier_voiture(voiture):
-    conn =connecter_db()
+    conn=connecter_db()
     cursor =conn.cursor()
-
     cursor.execute("""
     UPDATE voiture
     SET marque=%s,modele=%s,annee=%s,prix=%s
     WHERE id=%s
-    """, (voiture.marque, voiture.modele,voiture.annee, voiture.prix,voiture.id))
-
+    """, (voiture.marque,voiture.modele,voiture.annee,voiture.prix,voiture.id))
     conn.commit()
     conn.close()
 
