@@ -8,7 +8,7 @@
 
 
 ## 📒**Description de l'atelier** 
- ### Cet atelier permet d'appliquer plusieurs concepts  en POO qui sont la persistance des donnees ainsi nous avons pu interagir avec la base de donnees via le connecteur mysql-connector.
+ ### Cet atelier permet d'appliquer plusieurs concepts  en POO qui sont la persistance des donnéEs ,les bases de données ainsi nous avons pu interagir avec la base de données via le connecteur mysql-connector.
 
  ## J'ai implementé plusieurs méthodes :
  ### -➕Ajout d'une voiture
